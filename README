@@ -1,0 +1,21 @@
+To compile, run: 
+
+$ ghc --make Maze.hs
+
+Then, to run, e.g.
+
+$ ./Maze 10 20 
+
+will output a randomly generated maze that is 10 blocks wide and 20 blocks tall, where the generation started from the lower left corner (0,0).  You can also specify a starting point in the maze, e.g.
+
+$ ./Maze 10 20 5 10
+
+If you specify points outside the maze, you will be disappointed with the result ;)
+
+Some notes on the assignment:
+
+1. I used a Depth-First Search based approach as we discussed in the interview, and also borrowed the idea of only storing two walls per block (the South and West ones in this case, because it made the indices nicer).
+
+2. We didn’t talk much about the scope outside of the problem statement.  With this in mind, I performed some ad-hoc testing of my code in an interpreter, but I have no included any automated tests.
+
+3. You mentioned you would be passing this to a Haskell expert, so it is worth noting I only went so far with abstraction. I focussed on the most straightforward solution I could come up with. The first refactoring I would make is to abstract out the random number sequence into a monad to make handling it less painful.  
